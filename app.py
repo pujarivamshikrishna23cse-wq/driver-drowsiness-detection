@@ -12,7 +12,7 @@ class VideoProcessor(VideoProcessorBase):
         # Example text
         cv2.putText(
             img,
-            "Camera Working",
+            "Monitoring Driver...",
             (20, 40),
             cv2.FONT_HERSHEY_SIMPLEX,
             1,
@@ -25,5 +25,9 @@ class VideoProcessor(VideoProcessorBase):
 webrtc_streamer(
     key="driver-monitor",
     video_processor_factory=VideoProcessor,
-    media_stream_constraints={"video": True, "audio": False},
+    media_stream_constraints={
+        "video": True,
+        "audio": False
+    },
+    async_processing=True
 )
