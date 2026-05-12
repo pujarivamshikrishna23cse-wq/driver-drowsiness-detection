@@ -5,3 +5,4 @@ ultralytics
 numpy
 pandas
 Pillow
+streamlit-webrtc
